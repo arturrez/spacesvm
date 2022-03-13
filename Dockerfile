@@ -17,7 +17,7 @@ RUN go mod download
 # Copy the code into the container
 COPY . .
 
-RUN ./scripts/build.sh /build/spaces
+RUN make build-plugin
 
 # ============= Cleanup Stage ================
 FROM avaplatform/avalanchego:$AVALANCHE_VERSION AS builtImage
