@@ -17,10 +17,10 @@ RUN go mod download
 # Copy the code into the container
 COPY . .
 
-RUN ./scripts/build.sh /build/spaces
+RUN ./scripts/build.sh /build/sqja3uK17MJxfC7AN8nGadBw9JK5BcrsNwNynsqP5Gih8M5Bm
 
 # ============= Cleanup Stage ================
 FROM avaplatform/avalanchego:$AVALANCHE_VERSION AS builtImage
 
 # Copy the evm binary into the correct location in the container
-COPY --from=builder /build/build/sqja3uK17MJxfC7AN8nGadBw9JK5BcrsNwNynsqP5Gih8M5Bm /avalanchego/build/plugins/spaces
+COPY --from=builder /build/sqja3uK17MJxfC7AN8nGadBw9JK5BcrsNwNynsqP5Gih8M5Bm /avalanchego/build/plugins/spaces
